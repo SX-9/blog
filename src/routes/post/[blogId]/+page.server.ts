@@ -8,7 +8,7 @@ export const load = (async ({params}) => {
     const { blogId } = params;
     const blog = await pb.collection('blogs').getOne(blogId).catch(
         (error) => ({
-            error,
+            error: error?.toString() || error?.message || "An error occurred",
         })
     );
     return { blog };
