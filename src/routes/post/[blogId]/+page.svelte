@@ -17,26 +17,29 @@
 </svelte:head>
 
 {#if !data.blog?.error}
-    <img class="-z-10 opacity-10 absolute top-0 left-0 right-0 max-h-[40vh] min-h-[40vh] w-screen" src={pb.files.getUrl(data.blog, data.blog.thumbnail)} alt={data.blog.thumbnail}>
+    <img class="opacity-50 -z-20 absolute top-0 left-0 right-0 max-h-[50vh] min-h-[40vh] w-full overflow-hidden" src={pb.files.getUrl(data.blog, data.blog.thumbnail)} alt={data.blog.thumbnail}>
+    <div class="w-full h-full bg-gradient-to-t from-slate-950 to-transparent absolute -z-10 top-0 left-0 right-0 max-h-[50vh] min-h-[40vh] overflow-hidden"></div>
     <main class="flex flex-col justify-start items-center w-full">
         <div class="max-w-[780px] w-full mx-8">
             <div>
-                <h1 class="text-4xl text-slate-300">{data.blog.title}</h1>
-                <span class="text-md italic">
-                    {#if data.blog.unlisted}
-                        <span class="text-yellow-200">Unlisted Post</span> -
-                    {/if}
-                    Published {formatTime(data.blog.created)}
-                    {#if data.blog.updated !== data.blog.created}
-                        - Updated {formatTime(data.blog.updated)}
-                    {/if}
-                </span>
+                <h1 class="text-4xl text-slate-300 my-0">{data.blog.title}</h1>
+                <p class="my-0 italic">{data.blog.desc}</p>
             </div>
         </div>
-        <article class="max-w-[780px] w-full my-4 p-6 bg-slate-900 text-slate-300 shadow-lg">
+        <article class="max-w-[780px] w-full shadow-lg">
+            <span class="text-md italic">
+                {#if data.blog.unlisted}
+                    <span class="text-yellow-200">Unlisted Post</span> -
+                {/if}
+                Published {formatTime(data.blog.created)}
+                {#if data.blog.updated !== data.blog.created}
+                    - Updated {formatTime(data.blog.updated)}
+                {/if}
+            </span>
+            <hr>
             {@html data.blog.md}
         </article>
-        <span class="text-center">Thanks for reading 👋</span>
+        <span class="text-center italic">Thanks for reading 👋</span>
     </main>
 {:else}
     {data.blog.error}

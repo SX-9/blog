@@ -32,8 +32,8 @@
                     />
                     <div class="absolute inset-0 h-full w-full object-cover p-4 bg-gradient-to-tr from-slate-900 to-transparent text-white">
                         <div class="flex flex-col justify-end items-start h-full text-left">
-                            <h2>{post.title}</h2>
-                            <p>{post.desc}</p>
+                            <h2 class="my-0">{post.title}</h2>
+                            <p class="my-0">{post.desc}</p>
                         </div>
                     </div>
                 </button>
