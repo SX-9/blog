@@ -1,8 +1,14 @@
 import PocketBase from 'pocketbase';
 import { PUBLIC_POCKETBASE_URL } from '$env/static/public';
+import { writable } from 'svelte/store';
 
 const pb = new PocketBase(PUBLIC_POCKETBASE_URL);
 export default pb;
+
+export const authStore = writable(pb.authStore);
+pb.authStore.onChange(() => {
+    authStore.set(pb.authStore);
+});
 
 export function formatTime(strdate: string): string {
     const date = new Date(strdate);

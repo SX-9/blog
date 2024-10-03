@@ -17,30 +17,28 @@
 </svelte:head>
 
 {#if !data.blog?.error}
-    <img class="opacity-50 -z-20 absolute top-0 left-0 right-0 max-h-[50vh] min-h-[40vh] w-full overflow-hidden" src={pb.files.getUrl(data.blog, data.blog.thumbnail)} alt={data.blog.thumbnail}>
-    <div class="w-full h-full bg-gradient-to-t from-slate-950 to-transparent absolute -z-10 top-0 left-0 right-0 max-h-[50vh] min-h-[40vh] overflow-hidden"></div>
-    <main class="flex flex-col justify-start items-center w-full">
-        <div class="max-w-[780px] w-full mx-8">
-            <div>
-                <h1 class="text-4xl text-slate-300 my-0">{data.blog.title}</h1>
-                <p class="my-0 italic">{data.blog.desc}</p>
-            </div>
-        </div>
-        <article class="max-w-[780px] w-full shadow-lg">
-            <span class="text-md italic">
+    <header class="w-full flex justify-center items-center">
+        <div class="w-full text-center max-w-[780px]">
+            <span class="text-sm italic">
+                <img class="w-full h-40 shadow-lg" src={pb.files.getUrl(data.blog, data.blog.thumbnail, { thumb: '780x160' })} alt={data.blog.thumbnail}>
                 {#if data.blog.unlisted}
                     <span class="text-yellow-200">Unlisted Post</span> -
                 {/if}
-                Published {formatTime(data.blog.created)}
+                Published {new Date(data.blog.created).toISOString().split('T')[0].replace(/-/g, '/')}
                 {#if data.blog.updated !== data.blog.created}
-                    - Updated {formatTime(data.blog.updated)}
+                    - Updated {new Date(data.blog.updated).toISOString().split('T')[0].replace(/-/g, '/')}
                 {/if}
             </span>
-            <hr>
+            <h1 class="text-6xl text-slate-300">{data.blog.title}</h1>
+            <p class="italic text-lg">{data.blog.desc}</p>
+        </div>
+    </header>
+    <main class="flex flex-col justify-start items-center w-full">
+        <article class="max-w-[780px] w-full shadow-lg">
             {@html data.blog.md}
         </article>
-        <span class="text-center italic">Thanks for reading 👋</span>
     </main>
+    <footer class="text-center italic">Thanks for reading 👋</footer>
 {:else}
     {data.blog.error}
 {/if}

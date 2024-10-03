@@ -1,4 +1,5 @@
 <script lang="ts">
+    import pb, { authStore } from "$lib";
     import "../app.css";
     import { fly } from 'svelte/transition';
 
@@ -8,8 +9,13 @@
 <header>
     <h3><a href="/" class="text-gray-400 no-underline">satr14's blog</a></h3>
     <nav>
-        <a class="text-right" href="//satr14.my.id">main site</a>
-        <a href="/archive">blog archive</a>
+        {#if !$authStore.isValid}
+            <a href="/login">login</a>
+		{:else}
+			<a href="/#" on:click={pb.authStore.clear}>logout</a>
+        {/if}
+        <a href="//satr14.my.id">main</a>
+        <a href="/archive">archive</a>
     </nav>
 </header>
 
