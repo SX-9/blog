@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body { @apply bg-slate-950 text-gray-400 m-8; }
-h1 { @apply text-4xl font-bold my-4; }
+h1 { @apply text-4xl font-semibold my-4; }
 h2 { @apply text-3xl font-bold my-4; }
 h3 { @apply text-2xl font-bold my-4; }
 h4 { @apply text-xl font-bold my-4; }
@@ -22,6 +22,10 @@ header { @apply flex justify-between items-center gap-4; }
 nav { @apply flex gap-4; }
 img { @apply object-cover object-center; }
 form { @apply my-4 flex flex-col justify-center items-start; }
-input { @apply p-1 my-2 w-full border border-gray-700; }
-button { @apply p-1 my-2 w-full bg-gray-500 text-slate-900; }
+input { @apply m-1 py-1 px-2 w-full border bg-gray-700 text-gray-300; }
+button { @apply m-1 py-1 px-2 w-full bg-gray-400 text-slate-900; }
 footer { @apply my-4 text-center; }
+table { @apply w-full my-4; }
+thead { @apply bg-slate-800 text-gray-400; }
+tbody { @apply bg-slate-900 text-slate-300; }
+tr, th, td { @apply p-1 border border-gray-700; }

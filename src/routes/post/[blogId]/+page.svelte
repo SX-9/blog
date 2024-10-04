@@ -1,6 +1,6 @@
 <script lang="ts">
     // import type { PageData } from './$types';
-    import pb, { formatTime } from '$lib';
+    import pb from '$lib';
     export let data: any; // PageData;
 </script>
 
@@ -20,7 +20,6 @@
     <header class="w-full flex justify-center items-center">
         <div class="w-full text-center max-w-[780px]">
             <span class="text-sm italic">
-                <img class="w-full h-40 shadow-lg" src={pb.files.getUrl(data.blog, data.blog.thumbnail, { thumb: '780x160' })} alt={data.blog.thumbnail}>
                 {#if data.blog.unlisted}
                     <span class="text-yellow-200">Unlisted Post</span> -
                 {/if}
@@ -35,6 +34,7 @@
     </header>
     <main class="flex flex-col justify-start items-center w-full">
         <article class="max-w-[780px] w-full shadow-lg">
+            <img class="w-full shadow-lg" src={pb.files.getUrl(data.blog, data.blog.thumbnail, { thumb: '780x160' })} alt={data.blog.thumbnail}>
             {@html data.blog.md}
         </article>
     </main>

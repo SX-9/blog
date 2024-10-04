@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { goto } from '$app/navigation';
   import { PUBLIC_POCKETBASE_URL } from '$env/static/public';
     import pb from '$lib';
 
@@ -15,10 +16,10 @@
             })
             .then(() => {
                 busy = false;
-                window.location.href = '/';
             })
             .finally(() => {
                 busy = false;
+                goto('/');
             });
     }
 </script>
