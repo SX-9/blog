@@ -19,7 +19,7 @@
 {#if !data.blog?.error}
     <header class="w-full flex justify-center items-center">
         <div class="w-full text-center max-w-[780px]">
-            <span class="text-sm italic">
+            <span class="text-xs sm:text-sm italic">
                 {#if data.blog.unlisted}
                     <span class="text-yellow-200">Unlisted Post</span> -
                 {/if}
@@ -28,8 +28,8 @@
                     - Updated {new Date(data.blog.updated).toISOString().split('T')[0].replace(/-/g, '/')}
                 {/if}
             </span>
-            <h1 class="text-6xl text-slate-300">{data.blog.title}</h1>
-            <p class="italic text-lg">{data.blog.desc}</p>
+            <h1 class="my-0 md:my-4 text-4xl md:text-5xl lg:text-6xl text-slate-300">{data.blog.title}</h1>
+            <p class="italic text-base sm:text-lg">{data.blog.desc}</p>
         </div>
     </header>
     <main class="flex flex-col justify-start items-center w-full">
