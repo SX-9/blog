@@ -10,7 +10,7 @@ h4 { @apply text-lg md:text-xl font-bold my-4; }
 h5 { @apply text-base md:text-lg font-bold my-4; }
 h6 { @apply text-sm md:text-base font-bold my-4; }
 a { @apply text-sky-500 underline; }
-article { @apply p-2 sm:p-4 md:p-6 bg-slate-900 text-slate-300; }
+article { @apply p-2 sm:p-4 text-slate-300; }
 p { @apply my-4 text-sm sm:text-base; }
 code { @apply bg-slate-800 p-0.5 rounded-md; }
 pre { @apply bg-slate-800 p-4 rounded-md my-4 overflow-x-auto; }

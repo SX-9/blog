@@ -1,8 +1,8 @@
 import type { PageServerLoad } from './$types';
 import pb from '$lib';
 
-export const csr = false;
-export const ssr = true;
+// export const csr = false;
+// export const ssr = true;
 
 export const load = (async ({params}) => {
     const { blogId } = params;
