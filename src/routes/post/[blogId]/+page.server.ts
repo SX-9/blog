@@ -1,8 +1,10 @@
 import type { PageServerLoad } from './$types';
-import pb from '$lib';
+import { POCKETBASE_URL } from '$env/static/private';
+import Pocketbase from "pocketbase";
 
-// export const csr = false;
-// export const ssr = true;
+const pb = new Pocketbase(POCKETBASE_URL);
+export const csr = false;
+export const ssr = true;
 
 export const load = (async ({params}) => {
     const { blogId } = params;
