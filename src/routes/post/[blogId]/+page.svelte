@@ -25,8 +25,8 @@
     <header class="w-full flex justify-center items-center">
         <div class="w-full my-4 max-w-[780px]">
             <img class="w-full shadow-lg" src={pb.files.getUrl(data.blog, data.blog.thumbnail, { thumb: '780x160' })} alt={data.blog.thumbnail}>
-            <h1 class="my-0 md:my-4 text-4xl sm:text-6xl text-slate-300 font-normal">{data.blog.title}</h1>
-            <p class="italic text-base sm:text-lg my-2">
+            <h1 class="md:my-4 text-4xl sm:text-6xl text-slate-300 font-normal">{data.blog.title}</h1>
+            <p class="italic text-base sm:text-lg">
                 {#if data.blog.unlisted}
                     <span class="text-yellow-200">Unlisted</span> - 
                 {/if}
