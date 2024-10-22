@@ -7,6 +7,10 @@
     export let data;
 </script>
 
+<svelte:head>
+	<script defer data-domain="blog.satr14.my.id" src="https://plausible.io/js/script.js"></script>
+</svelte:head>
+
 <header>
 	<h3><a href="/" class="text-gray-400 no-underline">satr14's blog</a></h3>
 	<nav>
