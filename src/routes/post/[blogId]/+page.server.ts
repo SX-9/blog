@@ -3,7 +3,7 @@ import { POCKETBASE_URL } from '$env/static/private';
 import Pocketbase from "pocketbase";
 
 const pb = new Pocketbase(POCKETBASE_URL);
-export const csr = false;
+// export const csr = false;
 export const ssr = true;
 
 export const load = (async ({params}) => {
