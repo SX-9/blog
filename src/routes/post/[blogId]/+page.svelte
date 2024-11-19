@@ -11,7 +11,10 @@
 
 <svelte:head>
     <title>{data.blog.title || '?'} - satr14's blog</title>
+    <meta name="title" content={data.blog.title || ''}>
     <meta name="description" content={data.blog.desc || ''}>
+    <meta name="theme-color" content="#000000">
+
     <meta property="og:title" content={data.blog.title || ''}>
     <meta property="og:description" content={data.blog.desc || ''}>
     <meta property="og:image" content={pb.files?.getUrl(data.blog, data.blog.thumbnail) || ''}>
@@ -19,6 +22,11 @@
     <meta property="article:modified_time" content={data.blog.updated || ''}>
     <meta property="article:author" content="satr14">
     <meta property="og:type" content="article">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={data.blog.title || ''}>
+    <meta name="twitter:description" content={data.blog.desc || ''}>
+    <meta name="twitter:image" content={pb.files?.getUrl(data.blog, data.blog.thumbnail) || ''}>
 </svelte:head>
 
 {#if !data.blog?.error}
