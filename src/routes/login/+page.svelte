@@ -34,6 +34,6 @@
         <input type="text" id="email" bind:value={email} required disabled={busy} placeholder="email">
         <input type="password" id="password" bind:value={password} required disabled={busy} placeholder="password">
         <button type="submit" disabled={busy}>Login</button>
-        <a href={PUBLIC_POCKETBASE_URL+'/_'}>pocketbase dashboard</a>
+        <a href={PUBLIC_POCKETBASE_URL+'/_/'}>pocketbase dashboard</a>
     </form>
 </main>
