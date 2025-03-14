@@ -26,7 +26,7 @@
         <a href={'/post/'+spotlight.id}>
             {#if spotlight?.thumbnail}
                 <img
-                    src={pb.files.getUrl(spotlight, spotlight.thumbnail, { thumb: '' })}
+                    src={pb.files.getURL(spotlight, spotlight.thumbnail, { thumb: '' })}
                     alt={spotlight.thumbnail}
                     class="absolute inset-0 h-full w-full object-cover transition-all dark:opacity-30 opacity-90 group-hover:opacity-100"
                 />
@@ -48,7 +48,7 @@
             <a href={'/post/'+post.id}>
                 {#if post?.thumbnail}
                     <img
-                        src={pb.files.getUrl(post, post.thumbnail, { thumb: '320x160' })}
+                        src={pb.files.getURL(post, post.thumbnail, { thumb: '320x160' })}
                         alt={post.thumbnail}
                         class="absolute inset-0 h-full w-full object-cover transition-all dark:opacity-30 opacity-90 group-hover:opacity-100"
                     />
